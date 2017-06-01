@@ -66,9 +66,9 @@ open class Payload: JSONRepresentable {
         var payloadData: [String: NodeRepresentable] = [:]
         var apsPayloadData: [String: NodeRepresentable] = [:]
         
-        if contentAvailable {
+        //if contentAvailable {
             apsPayloadData["content-available"] = true
-        } else {
+        //} else {
         
         // Create alert dictionary
         var alert: [String: NodeRepresentable] = [:]
@@ -128,7 +128,7 @@ open class Payload: JSONRepresentable {
             apsPayloadData["mutable-content"] = 1
         }
 
-        }
+        //}
         
         payloadData["aps"] = try apsPayloadData.makeNode()
         for (key, value) in extra {
